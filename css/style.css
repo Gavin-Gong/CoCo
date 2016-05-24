@@ -1,0 +1,52 @@
+
+.card {
+	/*display: inline-block;*/
+	width: 400px;
+	margin: 20px auto;
+	padding: 20px 30px;
+	background-color: #fff;
+	box-shadow: 0px 2px 4px #AFAFAF;
+	border-radius: 5px;
+}
+.card:hover {
+	box-shadow: 0px 4px 30px #AFAFAF;
+}
+.card:hover>.card-option {
+	visibility: visible;
+}
+.card-title {
+
+}
+.card-tag {
+	margin: 10px 0 25px;
+}
+.card-tag-item {
+	padding: 5px 10px;
+	font-size: 14px;
+	background-color: #eee;
+	border-radius: 13px;
+}
+.card-content {
+	font-family: "robot mono", monospace;
+}
+.card-option {
+	visibility: hidden;  /*默认隐藏选项*/
+	list-style: none;
+	padding-left: 0;
+	margin-top: 40px;
+}
+.card-option-item {
+	display: inline-block;
+	margin-left: 15px;
+}
+.card-option-item:hover>i {
+	color: #000;
+}
+.card-option-item:first-child {
+	margin-left: 0;
+}
+.card-option-item>i {
+	cursor: pointer;
+	font-size: 20px;
+	color: #555;
+}
