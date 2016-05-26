@@ -103,10 +103,26 @@
 	vertical-align: middle;
 }
 
-
-.func-tip {
-	width: 30px;
-	height: 20px;
-	background-color: #333;
-	color: #fff;
+/*FAB*/
+.FAB {
+	position: fixed;
+    bottom: 45px;
+    right: 45px;
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    font-weight: lighter;
+    font-size: 47px;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    background: #f44336;
+    box-shadow: 3px 3px 10px #A9A9A9;
+    transition: all 500ms;
+    border-radius: 50%;
 }
+.FAB:hover {
+	box-shadow: 4px 6px 40px #A9A9A9;
+	transition: all 500ms;
+}
+/*END FAB*/
