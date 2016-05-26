@@ -33,6 +33,7 @@
 .card-title {
 
 }
+
 .card-tag {
 	margin: 10px 0 25px;
 }
@@ -44,6 +45,9 @@
 }
 .card-content {
 	font-family: "robot mono", monospace;
+}
+.card-content:focus {
+	padding-bottom: 30px;
 }
 .card-option {
 	visibility: hidden;  /*默认隐藏选项*/
@@ -97,7 +101,4 @@
 	height: 20px;
 	background-color: #333;
 	color: #fff;
-}
-[data-func]:after {
-	
 }
