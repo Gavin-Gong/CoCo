@@ -4,6 +4,7 @@
 	width: 100%;
 	padding-left: 40px;
 	padding-right: 40px;
+	box-sizing: border-box;
 	/*padding: 10px;*/
 	background-color: #00bcd4;
 }
@@ -82,6 +83,7 @@
 
 /*SideNav*/
 .sidenav {
+	display: none;
 	position: fixed;
 	top: 0;
 	left: -400px;

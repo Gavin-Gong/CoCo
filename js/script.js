@@ -37,22 +37,18 @@
     var HoverTip = hoverTip();
 
     var sideNav = function(btnElement,toggleElement) {
-            var status = null;
             var style = toggleElement.style;
             var width = style.width;
 
             return {
             	showSide: function () {
 	                style.left = 0;
-	                status = 1;
+	                style.display = "block";
             	},
             	hideSide: function() {
             		style.left = width;
-	                status = 0;
+            		style.display = "none";
             	},
-            	status: function() {
-            		return status;
-            	}
             }
     };
     var SideNav = sideNav(sideNavBtn, sideNavElement);
