@@ -2,21 +2,17 @@
  * Created by Kefen Gong on 5/26/2016.
  */
 (function() {
-    var cardCol = document.querySelectorAll(".card");
-    var headrCOl = document.querySelector(".header");
-    var cardTitles = document.querySelectorAll(".card-title");
-    var cardContents = document.querySelectorAll(".card-content");
-    var cardOptions = document.querySelectorAll(".card-option-item");
-    var sideNavBtn = document.querySelector('[data-func="side-toggle"]');
-    var sideNavElement = document.querySelector(".sidenav"); 
-
-    // Float Action Button
-    var FAB = document.querySelector(".FAB");
+    var cardCol = document.querySelectorAll(".card"); // 卡片集合
+    var headrEle = document.querySelector(".header"); //头部
+    var cardTitles = document.querySelectorAll(".card-title"); //标题集合
+    var cardContents = document.querySelectorAll(".card-content"); // 内容集合
+    var cardOptions = document.querySelectorAll(".card-option-item");  //卡片选项集合
+    var sideNavBtn = document.querySelector('[data-func="side-toggle"]'); //控制侧边栏的按钮
+    var sideNavElement = document.querySelector(".sidenav");  //侧边栏
+    var FAB = document.querySelector(".FAB"); // Float Action Button
  
-
-
-
-    var hoverTip = function() {
+    // 定义悬浮提示函数
+    var hoverTip = (function() {
         return {
             hideTip: function(tipElement) {
                 if(tipElement) {
@@ -35,11 +31,10 @@
                 element.css += cssClassName;
             },
         }
-    };
+    })();
 
-    var HoverTip = hoverTip();
-
-    var sideNav = function(btnElement,toggleElement) {
+    // 定义侧边栏函数
+    var sideNav = (function(btnElement,toggleElement) {
             var style = toggleElement.style;
             var width = style.width;
 
@@ -53,23 +48,23 @@
             		style.display = "none";
             	},
             }
-    };
-    var SideNav = sideNav(sideNavBtn, sideNavElement);
-    // sideNavBtn.addEventListener("click", SideNav.showSide);
+    })(sideNavBtn, sideNavElement);
+    // sideNav 开关事件
     document.addEventListener("click", function(event) {
     	if(1) {
     		if(event.target ==  sideNavBtn) {
-    			SideNav.showSide();
+    			sideNav.showSide();
     		} 
     		else if(sideNavElement.contains(event.target) || event.target == sideNavElement) {
     			return false;
     		} else {
-    			SideNav.hideSide();
+    			sideNav.hideSide();
     		}
     	}
     }, true);
 
-    var dataManage = function() {
+    // 定义数据管理函数
+    var dataManage = (function() {
         return {
             setUIData: function(element) {
                 var title = element.querySelector(".card-title").innerHTML;
@@ -80,18 +75,10 @@
                 localStorage.removeItem(key);
             }
         }
-    };
-    var DataManage = dataManage();
+    })();
 
-
-// 设置为可编辑状态
-    for(var q=0, len=cardTitles.length; q<len; q++ ) {
-        cardTitles[q].setAttribute("contenteditable","true");
-        cardContents[q].setAttribute("contenteditable","true");
-    }
-
-// 定义卡片方法
-    var cardFunc = function() {
+    // 定义卡片方法
+    var cardFunc = (function() {
         return {
             createCard: function(cardBOX) {
                 var newCard = cardBOX.cloneNode(deep);
@@ -108,14 +95,59 @@
                 cardElement.parentNode.removeChild(cardElement);
 
                 // 清除存储数据
-                DataManage.removeItem(title);
+                dataManage.removeItem(title);
 
             }
         }
+    })()
+
+    var floatMask = (function() {
+    	return {
+    		createMsk: function() {
+    			var mskEle = document.createElement('div');
+    			mskEle.className = "float-msk";
+    			document.body.insertBefore(mskEle, document.body.firstChild);
+    		},
+    		hasMask: function() {
+    			var className = document.body.firstChild.className;
+    			if(className) {
+    				if( className.match('float-msk') != -1 ) {
+    				return true;
+    				}
+    			}
+    		},
+    		hideMask: function() {
+    			var maskEle = document.querySelector('.float-msk');
+    			maskEle.style.display = "none";
+    		},
+    		showMask: function() {
+    			var maskEle = document.querySelector('.float-msk');
+    			maskEle.style.display = "block";
+    		}
+    	}
+    })()
+
+    function cardFocusHandler() {
+    	//floatMask.hasMask() add detect maskEle
+		if(!floatMask.hasMask()) {floatMask.createMsk()}
+		floatMask.showMask();
     }
-    var CardFunc = cardFunc();
+    function cardBlurHandler() {
+    	floatMask.hideMask();
+    }
+    for(var k=0, cardNum = cardTitles.length; k<cardNum; k++) {
+    	cardTitles[k].addEventListener("focus", cardFocusHandler);
+    	cardTitles[k].addEventListener("blur", cardBlurHandler);
+    	cardContents[k].addEventListener("focus", cardFocusHandler);
+    	cardContents[k].addEventListener("blur", cardBlurHandler);
+    }
+ 
+	// 全部设置为可编辑状态
+    for(var q=0, len=cardTitles.length; q<len; q++ ) {
+        cardTitles[q].setAttribute("contenteditable","true");
+        cardContents[q].setAttribute("contenteditable","true");
+    }
     FAB.addEventListener("click", function() {
-    	
     })
 
 
