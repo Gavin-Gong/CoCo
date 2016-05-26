@@ -127,12 +127,14 @@
     	}
     })()
 
-    function cardFocusHandler() {
+    function cardFocusHandler(event) {
     	//floatMask.hasMask() add detect maskEle
+    	event.target.parentNode.style.position = "relative"
 		if(!floatMask.hasMask()) {floatMask.createMsk()}
 		floatMask.showMask();
     }
     function cardBlurHandler() {
+    	event.target.parentNode.style.position = "static"
     	floatMask.hideMask();
     }
     for(var k=0, cardNum = cardTitles.length; k<cardNum; k++) {
@@ -149,8 +151,4 @@
     }
     FAB.addEventListener("click", function() {
     })
-
-
-
-
 })()
