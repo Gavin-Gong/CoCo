@@ -2,14 +2,17 @@
  * Created by Kefen Gong on 5/26/2016.
  */
 (function() {
-    var cardCol = document.querySelector(".card");
+    var cardCol = document.querySelectorAll(".card");
     var headrCOl = document.querySelector(".header");
-    var cardTitles = cardCol.querySelector(".card-title");
-    var cardContents = cardCol.querySelector(".card-content");
-    var cardOptions = cardCol.querySelector(".card-option-item");
-    var sideNavBtn = headrCOl.querySelector('[data-func="side-toggle"]');
+    var cardTitles = document.querySelectorAll(".card-title");
+    var cardContents = document.querySelectorAll(".card-content");
+    var cardOptions = document.querySelectorAll(".card-option-item");
+    var sideNavBtn = document.querySelector('[data-func="side-toggle"]');
     var sideNavElement = document.querySelector(".sidenav"); 
-    console.log("Hello");
+
+    // Float Action Button
+    var FAB = document.querySelector(".FAB");
+ 
 
 
 
@@ -109,8 +112,11 @@
 
             }
         }
-
     }
+    var CardFunc = cardFunc();
+    FAB.addEventListener("click", function() {
+    	
+    })
 
 
 
