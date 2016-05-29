@@ -34,31 +34,28 @@
     // 定义侧边栏函数
     var sideNav = (function(btnElement, toggleElement) {
         var style = toggleElement.style;
-        var width = style.width;
+        // style.left
         var timer = null;
 
         return {
             showSide: function() {
-                // style.left = 0;
-                // style.display = "block";
                 showAnimate();
                 function showAnimate() {
                     timer = setInterval(function(){
-                        if (style.left == 0) {
+                        if (parseInt(style.left)>= 0) {
                             clearInterval(timer);
                         } else {
-                            style.left = -parseInt(width) + 30 + "px"
+                            // style.left = -300 + 30 + "px"
+                            style.left = parseInt(style.left) + 30 + "px";
                         }
                     }, 30)
                 }
             },
             hideSide: function() {
-                // style.left = width;
-                // style.display = "none";
                 hideAnimate();
                 function hideAnimate() {
                     timer = setInterval(function(){
-                        if (style.left == - parseInt(width)) {
+                        if (parseInt(style.left) <= -300) {
                             clearInterval(timer);
                         } else {
                             style.left = parseInt(style.left) - 30 + "px"
@@ -81,7 +78,7 @@ document.addEventListener("click", function(event) {
             sideNav.hideSide();
         }
     }
-}, true);
+}, false);
 
 // 定义数据管理函数
 var dataManage = (function() {
