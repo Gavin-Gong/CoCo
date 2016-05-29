@@ -119,6 +119,7 @@ var cardFunc = (function() {
             // 清除存储数据
             dataManage.removeItem(title);
 
+<<<<<<< HEAD
         }
     }
 })();
@@ -146,6 +147,15 @@ var floatMask = (function() {
             var maskEle = document.querySelector('.float-msk');
             maskEle.style.display = "block";
         }
+=======
+    function cardFocusHandler() {
+    	//floatMask.hasMask() add detect maskEle
+		if(!floatMask.hasMask()) {floatMask.createMsk()}
+		floatMask.showMask();
+    }
+    function cardBlurHandler() {
+    	floatMask.hideMask();
+>>>>>>> parent of 61cc985... maskfloat 基本完成
     }
 })()
 
@@ -187,6 +197,16 @@ document.addEventListener('keypress', function(event) {
         event.preventDefault();
         return false;
     }
+<<<<<<< HEAD
     console.log(event.keyCode);
 })
 })()
+=======
+    FAB.addEventListener("click", function() {
+    })
+
+
+
+
+})()
+>>>>>>> parent of 61cc985... maskfloat 基本完成
