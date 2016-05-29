@@ -14,9 +14,16 @@
 	vertical-align: middle;
 }
 .header span i {
-	color: #fff;
+	color: #222;
 	font-size: 25px;
 	cursor: pointer;
+}
+[data-func="search"] {
+	float: right;
+	margin-right: 15px;
+}
+[data-func="view-toggle"] {
+	float: right;
 }
 
 .card {
@@ -85,27 +92,76 @@
 
 /*SideNav*/
 .sidenav {
-	display: none;
+	/*display: none;*/
 	position: fixed;
 	top: 0;
-	left: -400px;
-	width: 400px;
+	left: -300px;
 	height: 100vh;
-	background-color: #fff;
-	box-shadow: 6px 0 20px #eee;
-	/*transition: all 500ms;*/
+	width: 300px;
+	text-align: center;
+	box-shadow: 6px 0 20px rgba(1,1,1,.1);
+	background: #fff;
 }
+
+.sideNav-person-center {
+	position: relative;
+	z-index: 10;
+	/*display: inline-block;*/
+	padding-top: 30px;
+	padding-bottom: 20px; 
+	text-align: center;
+	overflow: hidden;
+	/*background: #eee url(../img/banner1.png) top center no-repeat;*/
+}
+.sideNav-person-center:before {
+	content: "";
+	z-index: -1;
+	position: absolute;
+	margin: -10px;
+	top:0; left:0; right:0; bottom: 0;
+	background: url(../img/banner.png) top center no-repeat;
+	-webkit-filter: blur(10px);
+}
+.sideNav-person-center>img {
+	cursor: pointer;
+	display: inline-block;
+	width: 60px;
+	height: 60px;
+	border-radius: 50%
+}
+.sideNav-person-center>a {
+	display: block;
+	margin-top: 0;
+	color: #000;
+	text-decoration: none;
+}
+
 .sidenav>ul {
 	list-style: none;
 	padding-left: 0;
+}
+.sidenav-item {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: left;
+	cursor: pointer;
+	transition: all 600ms;
+}
+.sidenav-item:hover {
+	background: #eee;
+	transition: all 800ms;
+}
+.sidenav-item:hover i {
+	color: #000;
 }
 .sidenav-item-name {
 	line-height: 24px;
 }
 .sidenav-item>i {
-	margin-left: 50px;
+	margin-left: 40px;
 	margin-right: 10px;
 	vertical-align: middle;
+	color: #333;
 }
 
 /*FAB*/
