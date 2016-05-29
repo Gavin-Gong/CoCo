@@ -7,6 +7,7 @@
 	box-sizing: border-box;
 	/*padding: 10px;*/
 	background-color: #00bcd4;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, .15);
 }
 .header span {
 	display: inline-block;
@@ -40,7 +41,6 @@
 	/*transition: all 500ms;*/
 }
 .card-title {
-
 }
 
 .card-tag {
@@ -81,6 +81,7 @@
 	cursor: pointer;
 	font-size: 20px;
 	color: #555;
+	transition: all 500ms;
 }
 
 
@@ -89,16 +90,47 @@
 	display: none;
 	position: fixed;
 	top: 0;
-	left: -400px;
-	width: 400px;
+	left: 0px;
+	width: 300px;
 	height: 100vh;
+	text-align: center;
 	background-color: #fff;
-	box-shadow: 6px 0 20px #eee;
+	box-shadow: 6px 0 20px rgba(1,1,1,.1);
 	/*transition: all 500ms;*/
 }
+
+.sideNav-person-center {
+	display: inline-block;
+	margin-top: 40px;
+	text-align: center;
+
+	color: #000;
+	text-decoration: none;
+}
+.sideNav-person-center>img {
+	display: inline-block;
+	width: 60px;
+	height: 60px;
+	border-radius: 50%
+}
+.sideNav-person-center>p {
+	margin-top: 0;
+}
 .sidenav>ul {
-	list-style: none;
+	/*margin-top: 30px;*/
 	padding-left: 0;
+	list-style: none;
+}
+.sidenav-item {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: left;
+	cursor: pointer;
+	transition: all 800ms;
+}
+.sidenav-item:hover {
+	background: #eee;
+	transition: all 800ms;
 }
 .sidenav-item-name {
 	line-height: 24px;
@@ -133,7 +165,6 @@
 }
 /*END FAB*/
 
-
 /*JavaScript CSS*/
 .float-msk {
 	position: fixed;
@@ -141,5 +172,5 @@
 	width: 100%;
 	height: 100%;
 	height: 100vh;
-	background-color: rgba(12, 12, 12, .1);
+	background-color: rgba(12, 12, 12, .3);
 }

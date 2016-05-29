@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="css/public.css">
 	<!-- <link rel="stylesheet" href="css/layout.css"> -->
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/github.css">
 	<link rel="stylesheet" href="css/animate.css">
 </head>
 <body>
@@ -29,49 +30,42 @@
 				<span class="card-tag-item">CSS</span>
 				<span class="card-tag-item">JavaScript</span>
 			</div>
-			<div class="card-content" contenteditable>
-				function() {
-					console.log("Hello World");
-				}
-			</div>
+			<pre class="card-content" contenteditable><code>function() {console.log("Hello World");}</code>
+			</pre>
 			<ul class="card-option">
-				<li class="card-option-item"><i class="material-icons">cloud</i></li>
+				<li class="card-option-item"><i class="material-icons">remove_red_eye</i></li>
+				<li class="card-option-item"><i class="material-icons">delete</i></li>
+				<li class="card-option-item"><i class="material-icons">label</i></li>
 				<li class="card-option-item"><i class="material-icons">settings</i></li>
 				<li class="card-option-item"><i class="material-icons">more</i></li>
 			</ul>
 		</div>
 		<div class="card">
-			<h2 class="card-title">Hello</h2>
+			<h2 class="card-title" contenteditable>Hello</h2>
 			<div class="card-tag">
 				<span class="card-tag-item">HTML</span>
 				<span class="card-tag-item">CSS</span>
 				<span class="card-tag-item">JavaScript</span>
 			</div>
-			<div class="card-content">
-				function() {
-					console.log("Hello World");
-				}
-			</div>
+			<pre class="card-content" contenteditable><code>function() {console.log("Hello World");}</code>
+			</pre>
 			<ul class="card-option">
-				<li class="card-option-item"><i class="material-icons">cloud</i></li>
+				<li class="card-option-item"><i class="material-icons">delete</i></li>
 				<li class="card-option-item"><i class="material-icons">settings</i></li>
 				<li class="card-option-item"><i class="material-icons">more</i></li>
 			</ul>
 		</div>
 		<div class="card">
-			<h2 class="card-title">Hello</h2>
+			<h2 class="card-title" contenteditable>Hello</h2>
 			<div class="card-tag">
 				<span class="card-tag-item">HTML</span>
 				<span class="card-tag-item">CSS</span>
 				<span class="card-tag-item">JavaScript</span>
 			</div>
-			<div class="card-content">
-				function() {
-					console.log("Hello World");
-				}
-			</div>
+			<pre class="card-content" contenteditable><code>function() {console.log("Hello World");}</code>
+			</pre>
 			<ul class="card-option">
-				<li class="card-option-item"><i class="material-icons">cloud</i></li>
+				<li class="card-option-item"><i class="material-icons">delete</i></li>
 				<li class="card-option-item"><i class="material-icons">settings</i></li>
 				<li class="card-option-item"><i class="material-icons">more</i></li>
 			</ul>
@@ -79,6 +73,10 @@
 
 	</div>
 	<div class="sidenav">
+		<a class="sideNav-person-center" href="javascript:void(0)">
+			<img src="img/github_icon.png" alt="Person-center">
+			<p data-name="Gavin">Gavin</p>
+		</a>
 		<ul>
 			<!-- <li class="sidenav-item"><i class="material-icons">tag</i></li> -->
 			<li class="sidenav-item"><i class="material-icons">cloud</i><span class="sidenav-item-name">Cloud</span></li>
@@ -90,6 +88,11 @@
 	<div class="FAB">+</div>
 
 	<script src="js/jquery-1.12.3.js"></script>
+	<script src="js/highlight.pack.js"></script>
 	<script src="js/script.js"></script>
+
+	<script>
+		hljs.initHighlightingOnLoad();
+	</script>
 </body>
 </html>
