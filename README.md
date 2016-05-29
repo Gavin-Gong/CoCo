@@ -1,8 +1,8 @@
 # CoCo
 Code Collection
-
-
+---
 TODO-List
+
 ---
 ###　function
 - [ ] 间歇性存储数据到`localStorage`
@@ -11,6 +11,8 @@ TODO-List
 - [ ] 标签编辑
 - [ ] 木桶多列布局
 - [ ] 悬浮遮罩
+- [ ] trash
+- [ ] settings
 
 ### 重构
 - [ ] 代码抽象
