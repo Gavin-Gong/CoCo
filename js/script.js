@@ -41,12 +41,16 @@
             showSide: function() {
                 showAnimate();
                 function showAnimate() {
+                    
                     timer = setInterval(function(){
                         if (parseInt(style.left)>= 0) {
                             clearInterval(timer);
                         } else {
                             // style.left = -300 + 30 + "px"
-                            style.left = parseInt(style.left) + 30 + "px";
+                            var target = 0;
+                            var offset = parseInt(style.left); 
+                            var speed = Math.ceil((target - offset)/4);
+                            style.left = parseInt(style.left) + speed + "px";
                         }
                     }, 30)
                 }
@@ -59,6 +63,11 @@
                             clearInterval(timer);
                         } else {
                             style.left = parseInt(style.left) - 30 + "px"
+
+                            var target = -300;
+                            var offset = parseInt(style.left); 
+                            var speed = Math.floor((target - offset)/4);
+                            style.left = parseInt(style.left) + speed + "px";
                         }
                     }, 30)
                 }
