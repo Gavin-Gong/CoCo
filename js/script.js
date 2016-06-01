@@ -66,7 +66,7 @@
         };
 
     }
-)(sideNavBtn, sideNavElement);
+    )(sideNavBtn, sideNavElement);
 // sideNav 开关事件
 document.addEventListener("click", function(event) {
     if (1) {
@@ -178,12 +178,12 @@ FAB.addEventListener("click", function() {
     console.log(cardBOX.firstChild)
 })
 
-// 组织tab键跳转
+// 组织tab键跳转, 然而并不能
 document.addEventListener('keypress', function(event) {
     if(event.keyCode == 9) {
         event.preventDefault();
-        return false;
+        // return false;
     }
     console.log(event.keyCode);
-})
+});
 })()
